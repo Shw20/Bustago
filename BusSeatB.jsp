@@ -7,7 +7,7 @@
 <title>버스 좌석 선택</title>
 </head>
 <body>
-    <form method="post" action="reserve.jsp">
+    <form method="post" action="Reservation.jsp">
         <h2>좌석 선택</h2>
         <table>
             <% 
