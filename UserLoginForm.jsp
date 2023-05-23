@@ -13,7 +13,7 @@
 		<input type="text" name="userId" placeholder="아이디를 입력해주세요." class="form-control-lg">
 		<input type="password" name="userPw" placeholder="비밀번호를 입력해주세요" class="form-control from-control-lg">
 		<input type="submit" value="로그인" class="btn btn-primary mb-3"> 
-		<a href="./userJoin/UserJoinForm.jsp">회원가입</a>
+		<a href="../UserJoinForm.jsp">회원가입</a>
 	</form>
 </div>
 </body>
