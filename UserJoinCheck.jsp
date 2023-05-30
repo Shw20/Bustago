@@ -35,13 +35,17 @@
 		pstmt.setString(4, uGender);
 		pstmt.setString(5, uTel);
 		
-		pstmt.executeUpdate();
+		int result = pstmt.executeUpdate();
 		
-		con.close();
-		
-	} catch(Exception e) {
+		if(result == 1){
+			response.sendRedirect("http://localhost:8080/Bustago/user/JoinSuccess.jsp");
+		} else {
+			response.sendRedirect("http://localhost:8080/Bustago/user/JoinFail.jsp");
+		}
+	}catch(Exception e) {
 		e.printStackTrace();
 	}
+	
 	
 %>
 
