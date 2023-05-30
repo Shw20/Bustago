@@ -10,6 +10,7 @@
 
 	String uId = request.getParameter("userId");
 	String uPw = request.getParameter("userPw");
+	String uNm = request.getParameter("userName");
 	
 	String dbType = "com.mysql.jdbc.Driver";
 	String userUrl = "jdbc:mysql://localhost:3306/bustago?serverTimezone=UTC";
@@ -39,9 +40,12 @@
 			
 			if(uPw.equals(dbPw)){
 				
-				session.setAttribute("m_Id", uId);
+				session.setAttribute("m_Nm", dbName);
+				session.setAttribute("m_No", dbId);
 				
-				response.sendRedirect("http://localhost:8080/Bustago/LoJo/Main.jsp");
+				out.println("<script>alert('로그인 성공!');</script>");
+				
+				response.sendRedirect("http://localhost:8080/Bustago/Avator/LoginMain.jsp");
 				
 			} else {
 				response.sendRedirect("http://localhost:8080/Bustago/user/UserPwFail.jsp");
@@ -61,6 +65,6 @@
 <title>LoginCheck</title>
 </head>
 <body>
-
+	
 </body>
 </html>
