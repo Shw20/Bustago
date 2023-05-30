@@ -4,17 +4,60 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="Login.css">
 <title>login</title>
+<div class="Title">
+	<div class="daelimtago" style="
+	color:white; font-size: 30px; font-family: fantasy; position: relative; margin:0 auto; font-weight: 700;  margin: 20px;  ">
+		<p>대림타고
+	</div>
+	<div class="Login" style="
+	color:white; font-size: 50px; font-family: fantasy; text-align:center; font-weight: 700;  margin: 50px; height: 150px;  ">
+		<p>로그인
+	</div>
+	
+</div>
 </head>
-<body>
+<body style="background-color:rgb(135, 92, 255)">
 <row>
-<div class="col-sm-5">
-	<form action="http://localhost:8080/Bustago/user/UserLoginCheck.jsp" method="post">
-		<input type="text" name="userId" placeholder="아이디를 입력해주세요." class="form-control-lg">
-		<input type="password" name="userPw" placeholder="비밀번호를 입력해주세요" class="form-control from-control-lg">
-		<input type="submit" value="로그인" class="btn btn-primary mb-3"> 
-		<a href="../UserJoinForm.jsp">회원가입</a>
+<div class="col-sm-5" style="
+margin:0 auto;">
+	<form action="http://localhost:8080/Bustago/user/UserLoginCheck.jsp" name="LoginForm" method="post">
+		<input type="text" name="userId" placeholder="학번을 입력해주세요." class="form-control form-control-lg">
+		<input type="password" name="userPw" placeholder="비밀번호를 입력해주세요" class="form-control form-control-lg">
+		<input type="submit" value="로그인" class="btn btn-primary mb-3" onclick="checkform()"> 
+		<a href="../UserJoinForm.jsp" style="color:white;">회원가입</a>
 	</form>
 </div>
+</row>
+
+<script type="text/javascript">
+		function checkform(){
+			if(document.LoginForm.userId.value == ""){
+				alert("학번을 입력해주세요");
+				document.LoginForm.userId.focus();
+				return false;
+			} else if(document.LoginForm.userPw.value == ""){
+				alert("비밀번호를 입력해주세요");
+				document.LoginForm.userPw.focus();
+				return false;
+			}
+			
+			if(!document.LoginForm.userId.value.length == 9){
+				alert("학번 9자리를 입력해주세요!");
+				document.LoginForm.userId.focus();
+			} else if( ! (document.LoginForm.userPw.value.length >= 4)) {
+				alert("비밀번호는 4~12 사이로 입력해주세요!");
+				document.LoginForm.userPw.focus();
+			}
+			
+			if(isNaN(document.LoginForm.userId.value.substr(0, 1))){
+				alert("학번을 숫자로 입력해주세요!");
+				document.LoginForm.userId.focus();
+			}
+			alert('로그인 성공!');
+			document.LoginForm.submit();
+		}
+	</script>
 </body>
 </html>
