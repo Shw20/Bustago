@@ -8,38 +8,7 @@
 </head>
 <body>
     <form method="post" action="Reservation.jsp">
-        <h2>좌석 선택</h2>
-        <table>
-            <% 
-            int rowCount = 10;
-            int colCount = 4;
-            int seatCount = 1;
-            for (int i = 1; i <= rowCount; i++) {
-                out.print("<tr>");
-                for (int j = 1; j <= colCount; j++) {
-                    out.print("<td>");
-                    if (seatCount <= rowCount*colCount) {
-                        out.print("<input type='radio' name='seat' value='" + seatCount + "'>");
-                        out.print(" " + seatCount++);
-                    }
-                    out.print("</td>");
-                }
-                out.print("</tr>");
-            }
-            %>
-            <tr>
-                <td colspan="4">
-                    <% 
-                    for (int i = 41; i <= 45; i++) {
-                        out.print("<input type='radio' name='seat' value='" + i + "'>");
-                        out.print(" " + i);
-                    }
-                    %>
-                </td>
-            </tr>
-        </table>
-
-        <!-- 예약 시간 선택을 추가 -->
+        <h2>좌석 및 시간 선택</h2>
         <br>
         <label for="time">예약 시간:</label>
         <select name="time" id="time">
@@ -138,17 +107,45 @@
             <option value="18:55">18:55</option>
         </select>
         <br>
+        <table>
+            <% 
+            int rowCount = 10;
+            int colCount = 4;
+            int seatCount = 1;
+            for (int i = 1; i <= rowCount; i++) {
+                out.print("<tr>");
+                for (int j = 1; j <= colCount; j++) {
+                    out.print("<td>");
+                    if (seatCount <= rowCount*colCount) {
+                        out.print("<input type='radio' name='seat' value='" + seatCount + "'>");
+                        out.print(" " + seatCount++);
+                    }
+                    out.print("</td>");
+                }
+                out.print("</tr>");
+            }
+            %>
+            <tr>
+                <td colspan="4">
+                    <% 
+                    for (int i = 41; i <= 45; i++) {
+                        out.print("<input type='radio' name='seat' value='" + i + "'>");
+                        out.print(" " + i);
+                    }
+                    %>
+                </td>
+            </tr>
+        </table>
 
         <br>
         <input type="submit" value="예약">
     </form>
 
     <% 
-    // 데이터베이스 연결 설정
     String driver = "com.mysql.jdbc.Driver";
     String url = "jdbc:mysql://localhost/bustago";
-    String username = "사용자명";
-    String password = "비밀번호";
+    String username = "root";
+    String password = "208510";
 
     Connection conn = null;
     try {
@@ -160,22 +157,22 @@
         e.printStackTrace();
     }
 
-    // 예약 정보를 데이터베이스에 저장
     String[] seats = request.getParameterValues("seat");
-    String time = request.getParameter("time"); // 선택한 예약 시간 가져오기
+    String time = request.getParameter("time");
     if (seats != null && seats.length > 0) {
         try {
-            String insertQuery = "INSERT INTO reserve (mb_NO, rsv_Line, rsv_Time, rsv_SeatNum) VALUES (?, ?, ?, ?)";
-            PreparedStatement pstmt = conn.prepareStatement(insertQuery);
+            String sql = "INSERT INTO reserve (rsv_number, mb_NO, rsv_time, rsv_seatnum) VALUES (?, ?, ?, ?)";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
 
-            int mb_NO = 1; // 예시로 mb_NO를 1로 설정했습니다. 실제로는 해당 멤버의 ID를 사용해야 합니다.
-            String rsv_Line = "노선";
-            int rsv_SeatNum = Integer.parseInt(seats[0]); // 예시로 첫 번째 선택한 좌석을 사용했습니다. 실제로는 선택한 좌석을 사용해야 합니다.
+            int mb_NO = 1;
+            int rsv_seatnum = Integer.parseInt(seats[0]);
+            int rsv_time = Integer.parseInt(time.replace(":", ""));
+			int rsv_number = 1;
 
-            pstmt.setInt(1, mb_NO);
-            pstmt.setString(2, rsv_Line);
-            pstmt.setString(3, time); // 예약 시간 설정
-            pstmt.setInt(4, rsv_SeatNum);
+            pstmt.setInt(1, rsv_number);
+            pstmt.setInt(2, mb_NO);
+            pstmt.setInt(3, rsv_time);
+            pstmt.setInt(4, rsv_seatnum);
 
             pstmt.executeUpdate();
             pstmt.close();
@@ -189,11 +186,7 @@
             out.print(seat + " ");
         }
         out.print("</p>");
-    } else {
-        out.print("<h2>좌석을 선택해주세요</h2>");
     }
-
-    // 데이터베이스 연결 종료
     try {
         if (conn != null) {
             conn.close();
