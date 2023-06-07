@@ -45,7 +45,7 @@
         <ul class="dropdown-menu">
           <li><a href="../LoJo/Login.jsp">로그인</a></li>
           <li><a href="../LoJo/Join.jsp">회원가입</a></li>
-          <li><a href="../Avator/Reservation.jsp">예약</a></li>
+          <li><a href="../Avator/UserStation.jsp">예약</a></li>
           <li>정류장 정보
           	<ul>
           	<li><a href="../Avator/ABus.jsp">안양역</a></li>
