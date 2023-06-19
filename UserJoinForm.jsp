@@ -20,13 +20,21 @@
 </head>
 <body style="background-color:rgb(135, 92, 255)">
 <row>
-<div class="col-sm-5" style="
-margin:0 auto;">
+<div class="col-sm-5" style="margin:0 auto;">
 	<form action="http://localhost:8080/Bustago/user/UserLoginCheck.jsp" name="LoginForm" method="post">
 		<input type="text" name="userId" placeholder="학번을 입력해주세요." class="form-control form-control-lg">
 		<input type="password" name="userPw" placeholder="비밀번호를 입력해주세요" class="form-control form-control-lg">
-		<input type="submit" value="로그인" class="btn btn-primary mb-3" onclick="checkform()"> 
-		<a href="../UserJoinForm.jsp" style="color:white;">회원가입</a>
+		<center><input type="submit" value="로그인" class="btn btn-primary mb-3" onclick="checkform()" style="
+  font-family: arial;
+  font-size: 18px;
+  width: 100px;
+  height: 50px;"> 
+		<input type="button" class="btn btn-primary mb-3" href="../UserJoinForm.jsp" value="회원가입" style="
+  font-family: arial;
+  font-size: 18px;
+  width: 100px;
+  height: 50px;"></a>
+	</center>
 	</form>
 </div>
 </row>
@@ -41,12 +49,10 @@ margin:0 auto;">
 				alert("비밀번호를 입력해주세요");
 				document.LoginForm.userPw.focus();
 				return false;
-			}
-			
-			if(!document.LoginForm.userId.value.length == 9){
+			} else if(!document.LoginForm.userId.value.length == 9){
 				alert("학번 9자리를 입력해주세요!");
 				document.LoginForm.userId.focus();
-			} else if( ! (document.LoginForm.userPw.value.length >= 4 && document.LoginForm.userPw.length <= 12)) {
+			} else if( ! (document.LoginForm.userPw.value.length >= 4)) {
 				alert("비밀번호는 4~12 사이로 입력해주세요!");
 				document.LoginForm.userPw.focus();
 			}
@@ -55,7 +61,7 @@ margin:0 auto;">
 				alert("학번을 숫자로 입력해주세요!");
 				document.LoginForm.userId.focus();
 			}
-			
+			alert('로그인 성공!');
 			document.LoginForm.submit();
 		}
 	</script>
