@@ -1,9 +1,0 @@
-@charset "UTF-8";
-main {
-    background-image: url("main.png");
-    background-repeat: no-repeat;
-    backgroun-size: 100%;
-    width: 430px;
-    height: 932px;
-    background-size: contain;
-}
