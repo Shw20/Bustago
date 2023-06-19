@@ -1,0 +1,127 @@
+@charset "UTF-8";
+main {
+    background-image: url("../image/mypage.png");
+    background-repeat: no-repeat;
+    width: 430px;
+    height: 932px;
+    background-size: contain;
+}
+
+.id{
+	position: absolute;
+	top: 187px;
+	left: 150px;
+}
+.impo {
+	position: absolute;
+	top: 400px;
+	margin-left: 100px;
+	text-align: center;
+	border: none;
+}
+.impo table{
+	width: 100%;
+}
+.impo table td {
+    padding: 5px;
+    text-align: center;
+}
+
+.logout{
+	position: absolute;
+	top: 800px;
+	left: 50px;
+}
+
+#icon1{
+	position: relative;
+	top: 12px;
+	left: 10px;
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	opacity: 0;
+	cursor: pointer;
+}
+#icon2{
+	position: relative;
+	top: 12px;
+	left: 352px;
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	opacity: 0;
+	cursor: pointer;
+}
+#icon3{
+	position: absolute;
+	top: 73px;
+	left: 21px;
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	opacity: 0;
+	cursor: pointer;
+}
+#icon4{
+	position: absolute;
+	top: 125px;
+	left: 30px;
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	opacity: 0;
+	cursor: pointer;
+}
+
+
+#bar1{
+	position: absolute;
+	top: 870px;
+	left: 25px;
+	width: 55px;
+	height: 55px;
+	border: none;
+	cursor: pointer;
+	opacity: 0;
+}
+#bar2{
+	position: absolute;
+	top:870px;
+	left: 110px;
+	width: 55px;
+	height: 55px;
+	border: none;
+	cursor: pointer;
+	opacity: 0;
+}
+#bar3{
+	position: absolute;
+	top:870px;
+	left: 195px;
+	width: 55px;
+	height: 55px;
+	border: none;
+	cursor: pointer;
+	opacity: 0;
+}
+#bar4{
+	position: absolute;
+	top:870px;
+	left: 280px;
+	width: 55px;
+	height: 55px;
+	border: none;
+	cursor: pointer;
+	opacity: 0;
+}
+#bar5{
+	position: absolute;
+	top:870px;
+	left: 365px;
+	width: 55px;
+	height: 55px;
+	border: none;
+	cursor: pointer;
+	opacity: 0;
+}

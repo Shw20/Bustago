@@ -1,0 +1,158 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Jua&family=Single+Day&display=swap');
+
+main {
+    background-image: url("../image/station.png");
+    background-repeat: no-repeat;
+    width: 430px;
+    height: 932px;
+    background-size: contain;
+}
+.font{
+    font-family: 'Jua', sans-serif;
+}
+
+#map{
+	top: 143px;
+	left: 18px;
+	border: none;
+	width: 390px;
+	height: 450px;
+}
+.w{
+	position: relative;
+	top: 160px;
+	left: 18px;
+}
+
+#Button1{
+	position: relative;
+	top: 151px;
+	left: 15px;
+	width: 191px;
+	height: 191px;
+	border: none;
+	opacity: 0;
+}
+.i1Button input[type="submit"] {
+	top: 0px;
+	left: 0px;
+  	width: 191px;
+	height: 191px;
+  	border: none;
+  	cursor: pointer;
+}
+
+#Button2{
+	position: relative;
+	top: 151px;
+	left: 30px;
+	width: 191px;
+	height: 191px;
+	border: none; 
+	opacity: 0;
+}
+.i2Button input[type="submit"] {
+	top: 0px;
+	left: 0px;
+  	width: 191px;
+	height: 191px;
+  	border: none;
+  	cursor: pointer;
+}
+
+
+#icon1{
+	position: relative;
+	top: 8px;
+	left: 10px;
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	opacity: 0;
+	cursor: pointer;
+}
+#icon2{
+	position: relative;
+	top: 8px;
+	left: 350px;
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	opacity: 0;
+	cursor: pointer;
+}
+#icon3{
+	position: absolute;
+	top: 60px;
+	left: 20px;
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	opacity: 0;
+	cursor: pointer;
+}
+#icon4{
+	position: absolute;
+	top: 112px;
+	left: 30px;
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	opacity: 0;
+	cursor: pointer;
+}
+
+
+
+#bar1{
+	position: absolute;
+	top:865px;
+	left: 23px;
+	width: 55px;
+	height: 55px;
+	border: none;
+	cursor: pointer;
+	opacity: 0;
+}
+#bar2{
+	position: absolute;
+	top:865px;
+	left: 108px;
+	width: 55px;
+	height: 55px;
+	border: none;
+	cursor: pointer;
+	opacity: 0;
+}
+#bar3{
+	position: absolute;
+	top:865px;
+	left: 192px;
+	width: 55px;
+	height: 55px;
+	border: none;
+	cursor: pointer;
+	opacity: 0;
+}
+#bar4{
+	position: absolute;
+	top:865px;
+	left: 277px;
+	width: 55px;
+	height: 55px;
+	border: none;
+	cursor: pointer;
+	opacity: 0;
+}
+#bar5{
+	position: absolute;
+	top:865px;
+	left: 362px;
+	width: 55px;
+	height: 55px;
+	border: none;
+	cursor: pointer;
+	opacity: 0;
+}
+
